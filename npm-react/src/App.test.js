@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Form from './form';
 import { shallow } from 'enzyme';
 
 it('renders without crashing', () => {
@@ -9,8 +10,9 @@ it('renders without crashing', () => {
 });
 
 it('renders input-name', () => {
-  let wrapper = shallow(<App />);
-	const inputName = <input />;
-	expect(wrapper.contains(inputName).toBe(true);
+  let wrapper = shallow(<Form/>);
+	let actual = wrapper.contains(<input />);
+	let expected = true;
+	expect(actual).toBe(expected);
 
 });
