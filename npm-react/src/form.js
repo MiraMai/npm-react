@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 
 
 class Form extends Component {
@@ -11,7 +12,7 @@ class Form extends Component {
     return (
         <div>
             <input className="name" onChange={this.props.saveName} placeholder="name" />
-            <input onChange={this.props.saveEmail} placeholder="email" />
+            <input className="email" onChange={this.props.saveEmail} placeholder="email" />
         </div>
       
     );

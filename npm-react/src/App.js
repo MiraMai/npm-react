@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Form from './form';
+import Button from './button';
 
 class App extends Component {
      constructor(props) {
@@ -25,6 +26,7 @@ class App extends Component {
         </p>
         <Form saveName={this.saveName}
               saveEmail={this.saveEmail} />
+        <Button />
       </div>
     );
   }
