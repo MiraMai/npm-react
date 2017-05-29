@@ -10,7 +10,7 @@ class Form extends Component {
   render() {
     return (
         <div>
-            <input onChange={this.props.saveName} placeholder="name" />
+            <input className="name" onChange={this.props.saveName} placeholder="name" />
             <input onChange={this.props.saveEmail} placeholder="email" />
         </div>
       
