@@ -4,6 +4,15 @@ import './App.css';
 import Form from './form';
 
 class App extends Component {
+     constructor(props) {
+      super(props);
+         this.state= {
+             name: "",
+             email: ""
+         }
+         this.saveName= this.saveName.bind(this);
+      this.saveEmail= this.saveEmail.bind(this);
+     }
   render() {
     return (
       <div className="App">
@@ -14,10 +23,26 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <Form />
+        <Form saveName={this.saveName}
+              saveEmail={this.saveEmail} />
       </div>
     );
   }
+    saveName (event) {
+        let name= event.target.value;
+        this.setState ({
+            name: name
+        });
+         console.log(name);
+
+    }
+     saveEmail (event) {
+        let email= event.target.value;
+        this.setState ({
+            email: email
+        });
+         console.log(email);
+    }
 }
 
 export default App;
