@@ -13,6 +13,7 @@ class App extends Component {
          }
          this.saveName= this.saveName.bind(this);
       this.saveEmail= this.saveEmail.bind(this);
+      this.delete= this.delete.bind(this);     
      }
   render() {
     return (
@@ -25,8 +26,14 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Form saveName={this.saveName}
-              saveEmail={this.saveEmail} />
-        <Button />
+              saveEmail={this.saveEmail}
+              delete={this.delete}
+              name={this.state.name}
+                email={this.state.email} />
+        <Button delete={this.delete}
+                />
+        <div>{this.state.name}</div>
+        <div>{this.state.email}</div>
       </div>
     );
   }
@@ -35,7 +42,7 @@ class App extends Component {
         this.setState ({
             name: name
         });
-         console.log(name);
+         console.log('namefunction' + this.state.name);
 
     }
      saveEmail (event) {
@@ -44,6 +51,12 @@ class App extends Component {
             email: email
         });
          console.log(email);
+    }
+    delete () {
+        this.setState ({
+            name: "",
+            email: ""
+        });
     }
 }
 
