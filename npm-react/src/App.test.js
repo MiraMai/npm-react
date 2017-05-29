@@ -9,7 +9,15 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it('renders input-name', () => {
+test('renders input-name', () => {
+  let wrapper = shallow(<Form/>);
+	let actual = wrapper.contains(<input />);
+	let expected = true;
+	expect(actual).toBe(expected);
+
+});
+
+test('renders input-email', () => {
   let wrapper = shallow(<Form/>);
 	let actual = wrapper.contains(<input />);
 	let expected = true;
