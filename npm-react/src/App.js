@@ -32,8 +32,6 @@ class App extends Component {
                 email={this.state.email} />
         <Button delete={this.delete}
                 />
-        <div>{this.state.name}</div>
-        <div>{this.state.email}</div>
       </div>
     );
   }
@@ -42,15 +40,12 @@ class App extends Component {
         this.setState ({
             name: name
         });
-         console.log('namefunction' + this.state.name);
-
     }
      saveEmail (event) {
         let email= event.target.value;
         this.setState ({
             email: email
         });
-         console.log(email);
     }
     delete () {
         this.setState ({
