@@ -4,6 +4,7 @@ import App from './App';
 import Form from './form';
 import Button from './button';
 import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -11,16 +12,14 @@ it('renders without crashing', () => {
 });
 
 test('renders input-name', () => {
-  let wrapper = shallow(<Form myprops="this.props.saveName" />);
-	let actual = wrapper.contains(<input onChange={this.props.saveName} placeholder="name" />);
-	let expected = true;
-	expect(actual).toBe(expected);
-
-});
+  let wrapper = mount(<Form/>);
+  wrapper.find({className:'name'})       
+  });
 
 test('renders input-email', () => {
     
-   let wrapper = shallow(<Form/>); expect(wrapper.find('.email').hasClass('disabled')).toBe(true);
+   let wrapper = mount(<Form/>); 
+   wrapper.find({className:'email'})
   
 	
 });
